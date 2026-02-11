@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Maintenance</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<script>
+let loggedIn = localStorage.getItem("loggedIn");
+
+if(!loggedIn)
+{
+    alert("Please login first!");
+    window.location.href = "index.html";
+}
+</script>
+
+<div class="header">
+    <img src="logo.png">
+    <div class="header-title">
+        Event Management System
+    </div>
+</div>
+
+<script>
+    let role = localStorage.getItem("role");
+
+    if(role !== "admin")
+    {
+        alert("Unauthorized Access!");
+        window.location.href = "index.html";
+    }
+</script>
+
+<div class="container">
+    <h2>Maintenance Menu</h2>
+
+    <button onclick="location.href='add-membership.html'">
+        Add Membership
+    </button>
+
+    <br><br>
+
+    <button onclick="location.href='update-membership.html'">
+        Update Membership
+    </button>
+
+    <br><br>
+
+    <button onclick="location.href='admin.html'">
+        Back to Dashboard
+    </button>
+
+    <br><br>
+
+    <button onclick="logout()">Logout</button>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

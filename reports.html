@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reports</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<script>
+let loggedIn = localStorage.getItem("loggedIn");
+
+if(!loggedIn)
+{
+    alert("Please login first!");
+    window.location.href = "index.html";
+}
+</script>
+
+<div class="header">
+    <img src="logo.png">
+    <div class="header-title">
+        Event Management System
+    </div>
+</div>
+
+<script>
+    let role = localStorage.getItem("role");
+
+    if(!role)
+    {
+        alert("Please login first!");
+        window.location.href = "index.html";
+    }
+</script>
+
+<div class="container" style="width:80%;">
+    <h2>Membership Reports</h2>
+
+    <table border ="1" width="100%" id="reportTable">
+        <thead>
+            <tr>
+                <th>Membership No</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Duration</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+
+        <tbody>
+        </tbody>
+    </table>
+
+    <br>
+
+    <button onclick="goBack()">Back</button>
+
+    <button onclick="logout()">Logout</button>
+
+</div>
+
+<script src="script.js"></script>
+
+<script>
+    loadReports();
+</script>
+
+</body>
+</html>

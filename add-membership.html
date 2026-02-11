@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Membership</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<script>
+let loggedIn = localStorage.getItem("loggedIn");
+
+if(!loggedIn)
+{
+    alert("Please login first!");
+    window.location.href = "index.html";
+}
+</script>
+
+<script>
+    let role = localStorage.getItem("role");
+
+    if(role !== "admin")
+    {
+        alert("Unauthorized Access!");
+        window.location.href = "index.html";
+    }
+</script>
+
+<div class="header">
+    <img src="logo.png">
+    <div class="header-title">
+        Event Management System
+    </div>
+</div>
+
+<div class="container">
+    <h2>Add Membership</h2>
+
+    <form onsubmit="addMembership(event)">
+
+        <label>Membership Number:</label><br>
+        <input type="text" id="membershipNumber" required><br><br>
+
+        <label>Name:</label><br>
+        <input type="text" id="name" required><br><br>
+
+        <label>Email:</label><br>
+        <input type="email" id="email" required><br><br>
+
+        <label>Phone:</label><br>
+        <input type="tel" id="phone" pattern="[0-9]{10}" required><br><br>
+
+        <label>Duration:</label><br>
+
+        <input type="radio" name="duration" value="6 months" checked> 6 Months<br>
+        <input type="radio" name="duration" value="1 year"> 1 Year<br>
+        <input type="radio" name="duration" value="2 years"> 2 Years<br><br>
+
+        <button type="submit">Add Membership</button>
+
+    </form>
+
+    <br>
+    <button onclick="location.href='maintenance.html'">Back</button>
+    <br><br>
+    <button onclick="logout()">Logout</button>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

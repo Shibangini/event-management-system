@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="header">
+    <img src="logo.png">
+    <div class="header-title">
+        Event Management System
+    </div>
+</div>
+
+<div class="container">
+
+    <form onsubmit="login(event)">
+        
+        <label>Username:</label>
+        <input type="text" id="username" required>
+        <br><br>
+
+        <label>Password:</label>
+        <input type="password" id="password" required>
+        <br><br>
+        
+        <label>Role:</label>
+        <select id="role">
+        <option value="admin">Admin</option>
+        <option value="user">User</option>
+        </select>
+
+        <br><br>
+
+        <button type="submit">Login</button>
+
+    </form>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
