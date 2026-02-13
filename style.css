@@ -52,6 +52,39 @@ select
     font-size:14px;
 }
 
+/* Simple form helpers */
+.form-group
+{
+    text-align:left;
+    margin:10px 0;
+}
+
+.radio-group
+{
+    text-align:left;
+    margin:8px 0 12px 0;
+}
+
+.radio-group label
+{
+    display:inline-block;
+    margin-right:15px;
+    cursor:pointer;
+}
+
+.checkbox-group
+{
+    text-align:left;
+    margin:8px 0;
+}
+
+.fee-display
+{
+    text-align:left;
+    font-weight:600;
+    margin:8px 0 12px 0;
+}
+
 /* Buttons */
 button
 {

@@ -36,8 +36,10 @@ if(!loggedIn)
 <div class="container">
     <h2>Update Membership</h2>
 
-    <label>Enter Membership Number:</label><br>
-    <input type="text" id="searchMembershipNumber"><br><br>
+    <div class="form-group">
+        <label>Enter Membership Number:</label>
+        <input type="text" id="searchMembershipNumber">
+    </div>
 
     <button onclick="loadMember()">Load Member</button>
 
@@ -45,25 +47,46 @@ if(!loggedIn)
 
     <form onsubmit="updateMembership(event)">
 
-        <label>Name:</label><br>
-        <input type="text" id="updateName" required><br><br>
+        <div class="form-group">
+            <label>Name:</label>
+            <input type="text" id="updateName" required>
+        </div>
 
-        <label>Email:</label><br>
-        <input type="email" id="updateEmail" required><br><br>
+        <div class="form-group">
+            <label>Email:</label>
+            <input type="email" id="updateEmail" required>
+        </div>
 
-        <label>Phone:</label><br>
-        <input type="tel" id="updatePhone" pattern="[0-9]{10}" required><br><br>
+        <div class="form-group">
+            <label>Phone:</label>
+            <input type="tel" id="updatePhone" pattern="[0-9]{10}" required>
+        </div>
 
-        <label>Extend Duration:</label><br>
+        <div class="form-group">
+            <label>Extend Duration:</label>
+            <div class="radio-group" id="updateDurationGroup">
+                <label><input type="radio" name="extendDuration" value="6 months" checked> 6 Months</label>
+                <label><input type="radio" name="extendDuration" value="1 year"> 1 Year</label>
+                <label><input type="radio" name="extendDuration" value="2 years"> 2 Years</label>
+            </div>
+        </div>
 
-        <input type="radio" name="extendDuration" value="6 months" checked> 6 Months<br>
-        <input type="radio" name="extendDuration" value="1 year"> 1 Year<br>
-        <input type="radio" name="extendDuration" value="2 years"> 2 Years<br><br>
+        <div class="fee-display" id="updateFee">Membership Fee: ₹999</div>
 
-        <label>
-            <input type="checkbox" id="cancelMembership">
-            Cancel Membership
-        </label><br><br>
+        <div class="checkbox-group">
+            <label><input type="checkbox" id="updatePaymentCompleted"> Payment Completed</label>
+        </div>
+
+        <div class="checkbox-group">
+            <label><input type="checkbox" id="updateAutoRenew"> Enable Auto-Renewal</label>
+        </div>
+
+        <div class="checkbox-group">
+            <label>
+                <input type="checkbox" id="cancelMembership">
+                Cancel Membership
+            </label>
+        </div>
 
         <button type="submit">Update Membership</button>
 
